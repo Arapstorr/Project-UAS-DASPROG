@@ -4,7 +4,11 @@ using namespace std;
 
 int tujuan_penerbangan,
     kelas_penerbangan,
-    jenis_penerbangan;
+    jenis_penerbangan,
+    jumlah_penumpang;
+    
+string masukan_nama;
+
 long total_pembayaran;
 char ulangi;
 
@@ -88,46 +92,190 @@ RutePenerbangan daftarRute[10] = {
 void tampilkanDaftarRute() {
   cout << "DAFTAR HARGA TIKET PESAWAT (RUTE PENERBANGAN) :\n";
 
+
   for (int i = 0; i < 10; i++) {
     cout << i + 1 << ". Jakarta - " << daftarRute[i].tujuan << (i == 6 ? " " : "\t") << ": Rp " << daftarRute[i].harga << "\n";
   }
 }
 
 void kelasPenerbangan(RutePenerbangan rute, KelasPenerbangan kelas) {
-  cout << "\n==== Pilih Jenis Penerbangan ====\n\n";
+  cout << "\n==== PILIH JENIS PENERBANGAN ====\n\n";
   for (int i = 0; i < 2; i++) {
     cout << i + 1 << ". " << daftarPerjalanan[i] << "\n";
   }
 
-  cout << "\nMasukkan jenis penerbangan (1 - 2) : ";
+  cout << "\nMASUKKAN JENIS PENERBANGAN (PILIH 1/2) : ";
   cin >> jenis_penerbangan;
+
 
   if (jenis_penerbangan > 0 && jenis_penerbangan <= 2) {
     switch (jenis_penerbangan) {
       case 1:
+      	system("cls");
+      	cout << "\n|====================================================|" << endl;
+      	cout << "|                 RINCIAN PEMESANAN                  |" << endl;
+      	cout << "|====================================================|" << endl;
+      	cout << endl;
+      	cout << "NAMA PEMESANAN     : " << masukan_nama       << endl;
+      	cout << "TUJUAN PENERBANGAN : ";
+      	if(tujuan_penerbangan==1){
+      		cout << "Makassar";
+		  }
+		else if(tujuan_penerbangan==2){
+			cout << "Medan";
+		}
+		else if(tujuan_penerbangan==3){
+			cout << "Palembang";
+		}
+		else if(tujuan_penerbangan==4){
+			cout << "Semarang";
+		}
+		else if(tujuan_penerbangan==5){
+			cout << "Solo";
+		}
+		else if(tujuan_penerbangan==6){
+			cout << "Surabaya";
+		}
+		else if(tujuan_penerbangan==7){
+			cout << "Yogyakarta";
+		}
+		else if(tujuan_penerbangan==8){
+			cout << "Lombok";
+		}
+		else if(tujuan_penerbangan==9){
+			cout << "Denpasar";
+		}
+		else if(tujuan_penerbangan==10){
+			cout << "Bali";
+		}
+	    else {
+	    	cout << "Maaf, Tujuan penerbangan yang anda pilih tidak ada!";
+	    	cout << "\nSilahkan untuk memilih tujuan penerbangan kembali";
+		}
+		
+		
+      	cout << "\nKELAS PENERBANGAN  : ";
+      	if(kelas_penerbangan==1){
+      		cout << "Premium";
+		  }
+		else if(kelas_penerbangan==2){
+			cout << "Bisnis";
+		}
+		else if(kelas_penerbangan==3){
+			cout << "Ekonomi";
+		}
+		else if(kelas_penerbangan==4){
+			cout << "Biasa";
+		}
+		else {
+			cout << "\nMaaf, kelas penerbangan yang anda pilih tidak ada!";
+		}
+		
+      	cout << "\nJENIS PENERBANGAN  : ";
+      	if(jenis_penerbangan==1){
+      		cout << "Sekali Jalan";
+		  }
+		else if(jenis_penerbangan==2){
+			cout << "Pulang - Pergi";
+		}
+      	else {
+      		cout << "Maaf, jenis penerbangan yang anda masukkan salah!";
+		  }
         total_pembayaran = rute.harga + (rute.harga * kelas.ppn / 100);
-        cout << "\nTotal Harga : Rp " << total_pembayaran;
+        cout << "\nHARGA TIKET \t   : Rp." << total_pembayaran;
         break;
       case 2:
-        total_pembayaran = (rute.harga + (rute.harga * kelas.ppn / 100) * 2);
-        cout << "\nTotal Harga : Rp " << total_pembayaran;
+      	system("cls");
+      	cout << "\n|====================================================|" << endl;
+      	cout << "|                 RINCIAN PEMESANAN                  |" << endl;
+      	cout << "|====================================================|" << endl;
+      	cout << endl;
+      	cout << "NAMA PEMESANAN     : " << masukan_nama       << endl;
+      	cout << "TUJUAN PENERBANGAN : ";
+      	if(tujuan_penerbangan==1){
+      		cout << "Makassar";
+		  }
+		else if(tujuan_penerbangan==2){
+			cout << "Medan";
+		}
+		else if(tujuan_penerbangan==3){
+			cout << "Palembang";
+		}
+		else if(tujuan_penerbangan==4){
+			cout << "Semarang";
+		}
+		else if(tujuan_penerbangan==5){
+			cout << "Solo";
+		}
+		else if(tujuan_penerbangan==6){
+			cout << "Surabaya";
+		}
+		else if(tujuan_penerbangan==7){
+			cout << "Yogyakarta";
+		}
+		else if(tujuan_penerbangan==8){
+			cout << "Lombok";
+		}
+		else if(tujuan_penerbangan==9){
+			cout << "Denpasar";
+		}
+		else if(tujuan_penerbangan==10){
+			cout << "Bali";
+		}
+	    else {
+	    	cout << "Maaf, Tujuan penerbangan yang anda pilih tidak ada!";
+	    	cout << "\nSilahkan untuk memilih tujuan penerbangan kembali";
+		}
+		
+		
+      	cout << "\nKELAS PENERBANGAN  : ";
+      		if(kelas_penerbangan==1){
+      		cout << "Premium";
+		  }
+		else if(kelas_penerbangan==2){
+			cout << "Bisnis";
+		}
+		else if(kelas_penerbangan==3){
+			cout << "Ekonomi";
+		}
+		else if(kelas_penerbangan==4){
+			cout << "Biasa";
+		}
+		else {
+			cout << "Maaf, kelas penerbangan yang anda pilih tidak ada!";
+		}
+		
+		
+      	cout << "\nJENIS PENERBANGAN  : ";
+      	if(jenis_penerbangan==1){
+      		cout << "Sekali Jalan";
+		  }
+		else if(jenis_penerbangan==2){
+			cout << "Pulang - Pergi";
+		}
+      	else {
+      		cout << "Maaf, jenis penerbangan yang anda masukkan salah!";
+		  }
+        total_pembayaran = (rute.harga + (rute.harga * kelas.ppn / 100)) * 2;
+        cout << "\nHARGA TIKET \t   : Rp." << total_pembayaran;
         break;
     }
   } else {
-    cout << "Tidak ada pilihan jenis penerbangan!";
+    cout << "\nTIDAK ADA PILIHAN JENIS PENERBANGAN!";
   }
 }
 
 void tujuanPenerbangan(RutePenerbangan rute, int tujuan_penerbangan) {
-  cout << "\nTujuan          \t : " << rute.tujuan << "\n";
-  cout << "Harga Penerbangan \t : Rp " << rute.harga;
+  system ("cls");
+  cout << "\nTUJUAN          \t : "    << rute.tujuan << "\n";
+  cout << "HARGA PENERBANGAN \t : Rp " << rute.harga;
 
-  cout << "\n ===== Pilih Kelas Penerbangan ===== \n";
+  cout << "\n\n ===== PILIH KELAS PENERBANGAN ===== \n";
   for (int i = 0; i < 4; i++) {
     cout << i + 1 << ". Kelas " << daftarKelas[i].jenis << "\n";
   }
 
-  cout << "\nMasukkan kelas penerbangan (1 - 4) : ";
+  cout << "\nMASUKKAN KELAS PENERBANGAN (PILIH 1 - 4) : ";
   cin >> kelas_penerbangan;
 
   kelasPenerbangan(daftarRute[tujuan_penerbangan - 1], daftarKelas[kelas_penerbangan - 1]);
@@ -138,11 +286,17 @@ int main() {
     welcome("=== WELCOME TO THE AIRPORT ===\n");
 
     tampilkanDaftarRute();
-
-    cout << "\n===== Penerbangan dari Jakarta =====\n";
-    cout << "\nMasukkan tujuan penerbangan (1 - 10) : ";
+    
+    cout << "\n===== PENERBANGAN DARI KOTA JAKARTA =====\n";
+    cout << "\nMASUKKAN NAMA PEMESANAN : "; 
+    getline(cin, masukan_nama);
+    cout << "=========================================";
+    cout << "\n\nMASUKKAN TUJUAN PENERBANGAN (PILIH 1 - 10) : ";
     cin >> tujuan_penerbangan;
 
+    cout << "=========================================";
+    cout << "\n\nMASUKKAN JUMLAH PENUMPANG : ";
+    cin  >> jumlah_penumpang;
     if (tujuan_penerbangan > 0 && tujuan_penerbangan <= 10) {
       tujuanPenerbangan(daftarRute[tujuan_penerbangan - 1], tujuan_penerbangan);
     } else {
@@ -152,8 +306,14 @@ int main() {
       cin >>  ulangi;
 
       system("cls");
+      
     }
-  } while (ulangi == 'y');
+  } while (ulangi == 'y' || ulangi == 'Y');
 
-  cout << "\nTerima kasih telah menggunakan layanan kami, semoga datang kembali.\n";
+  cout << "\nTOTAL TIKET  \t   : Rp." << total_pembayaran * jumlah_penumpang << endl;
+
+  for (int i = 0;  i <2; i++){
+    cout << "\n=======================================================";
+ }
+    cout << "\n\nTERIMA KASIH SUDAH MENGGUNAKAN LAYANAN KAMI, SEMOGA SELAMAT SAMPAI TUJUAN\n";
 }
